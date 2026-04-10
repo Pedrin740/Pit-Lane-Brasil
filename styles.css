@@ -1,5 +1,5 @@
-/* 1. RESET E CONFIGURAÇÕES GERAIS */
-* {
+/* 1. RESET E CONFIGURAÇÕES GERAIS */ 
+{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -18,7 +18,7 @@ body {
   margin: 0 auto;
 }
 
-/* 2. HEADER (LOGO ESQUERDA | MENU DIREITA) */
+/* 2. HEADER (LOGO PARA ESQUERDA E MENU PARA DIREITA) */
 header {
   background: #0d0d0d;
   padding: 25px 0;
@@ -27,7 +27,7 @@ header {
 
 header .container {
   display: flex;
-  justify-content: space-between; /* Alinha Logo na esquerda e Menu na direita */
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -53,7 +53,6 @@ header .logo {
   transition: color 0.3s ease;
 }
 
-/* Efeito da linha vermelha embaixo (Link Ativo/Hover) */
 .nav-menu a:hover, 
 .nav-menu a.active {
   color: #e10600;
@@ -97,7 +96,6 @@ header .logo {
   color: #e10600;
 }
 
-/* Link "Sobre" no texto (impede de ficar roxo) */
 p a {
   color: #e10600 !important;
   text-decoration: none;
@@ -122,7 +120,6 @@ p a:hover {
   box-shadow: 0 6px 20px rgba(225, 6, 0, 0.4);
 }
 
-/* 4. EQUIPE (ESTILO CARDS - IMAGEM 2) */
 .section {
   padding: 40px 0;
   border-bottom: 1px solid #444;
@@ -160,7 +157,6 @@ p a:hover {
   border-color: #e10600;
 }
 
-/* Fotos Redondas e Padronizadas */
 .membro-foto-wrapper {
   width: 150px;
   height: 150px;
@@ -187,39 +183,43 @@ p a:hover {
   color: #ccc;
 }
 
-/* 5. FORMULÁRIO E BOTÃO (PADRÃO SITE) */
+/* 5. FORMULÁRIO E BOTÃO (PADRÃO DO SITE) */
 .contact-form {
-  max-width: 600px;
-  margin: 20px auto;
-  padding: 30px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
 }
 
 .form-group label {
-  display: block;
-  color: #e10600;
+  margin-bottom: 5px;
+  color: #fff;
   font-weight: 600;
-  margin-bottom: 8px;
 }
 
-.form-group input, .form-group textarea, .form-group select {
+.form-group input,
+.form-group select,
+.form-group textarea {
   width: 100%;
-  padding: 12px;
-  background: #000;
-  border: 1px solid #e10600;
-  color: white;
+  padding: 10px;
+  border: 1px solid red;
   border-radius: 5px;
-  margin-bottom: 20px;
+  background-color: #111;
+  color: #fff;
+  box-sizing: border-box;
+  resize: none;
 }
 
-/* Botão Enviar Feedback Estilizado */
-button[type="submit"] {
-  background-color: #e10600;
-  color: #ffffff;
-  padding: 12px 30px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
+button {
+  display: block;
+  margin: 20px auto 0;
+  padding: 12px 20px;
+  background-color: red;
+  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -228,11 +228,17 @@ button[type="submit"] {
   display: block;
   margin: 0 auto;
 }
-
 button[type="submit"]:hover {
   background-color: #b30500;
   transform: scale(1.05);
   box-shadow: 0 0 15px rgba(225, 6, 0, 0.6);
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #e10600;
+  box-shadow: 0 0 8px rgba(225, 6, 0, 0.4);
 }
 
 /* 6. FOOTER E RESPONSIVIDADE */
@@ -242,10 +248,10 @@ footer {
   border-top: 1px solid #444;
 }
 
-/* ===== BOTÃO HAMBURGUER ===== */
+/* BOTÃO HAMBURGUER */
 
 .hamburger {
-  display: none; /* só aparece no mobile */
+  display: none; 
   flex-direction: column;
   cursor: pointer;
   background: none;
@@ -255,7 +261,6 @@ footer {
   right: 20px;
 }
 
-/* Barrinhas */
 .bar {
   width: 25px;
   height: 3px;
@@ -264,8 +269,6 @@ footer {
   border-radius: 2px;
   transition: 0.3s;
 }
-
-/* ===== ANIMAÇÃO (X) ===== */
 
 .hamburger.active .bar:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
@@ -278,8 +281,6 @@ footer {
 .hamburger.active .bar:nth-child(3) {
   transform: rotate(-45deg) translate(6px, -6px);
 }
-
-/* Bandeiras de Países e Ajuste da Imagem das Equipes */
 
 .text-image-container {
   display: flex;
@@ -428,7 +429,7 @@ footer {
     position: absolute;
     top: 70px;
     right: 20px;
-    background: #0b0b1a; /* fundo escuro estilo F1 */
+    background: #0b0b1a;
     flex-direction: column;
     align-items: flex-start;
     padding: 15px;
